@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
+<html lang="<?php echo e(str_replace('_', '-', app()->getLocale())); ?>">
     <head>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -17,8 +17,8 @@
     </head>
     <body class="">
 
-    @foreach ($produto->all() as $produto)
-    @endforeach
+    <?php $__currentLoopData = $produto->all(); $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $produto): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
+    <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
 
 
     <div class="navbar shadow bg-base-100">
@@ -161,3 +161,4 @@
     
     </body>
 </html>
+<?php /**PATH C:\Users\LENOVO\Desktop\ecomerce\ecormece\ecomerce\resources\views/welcome.blade.php ENDPATH**/ ?>
